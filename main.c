@@ -1,24 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
+int doicho2so(int *controcuaA, int *controcuaB) {
+
+
+    printf("gia tri cua x duoc truyen vao la %d\n", *controcuaA);
+    printf("gia tri cua y duoc truyen vao la %d\n", * controcuaB);
+    int tmp = *controcuaA;
+    *controcuaA = *controcuaB;
+    *controcuaB = tmp;
+    printf("\n");
+    printf(" gia tri cua x sau khi doi cho la %d\n", *controcuaA);
+    printf(" gia tri cua y sau khi doi cho la %d\n", *controcuaB);
+}
 
 int main() {
-    int tongsomon;
-    printf(" tong so mon hoc can nhap:\n");
-    scanf("%d", &tongsomon);
-    int diemcacmon[tongsomon];
-
-    for (int i = 0; i < tongsomon; i++) {
-        printf(" vui long nhap gua tri cho phan tu thu %d\n", i + 1);
-        scanf("%d", &diemcacmon[i]);
-
+    int a,b;
+    printf( "vui long nhap a:\n");
+    scanf("%d", &a);
+    printf(" vui long nhap b:\n");
+    scanf("%d", &b);
+    if (a > b){
+        doicho2so(&a,&b);
     }
-    printf("\n in cac phan tu trong mang:\n");
-    int tongdiem = 0;
-    for (int j = 0; j < tongsomon; j++) {
-        tongdiem += diemcacmon[j];
-        printf(" gia tri cua phan tu thu %d la %d\n", j + 1, diemcacmon[j]);
-    }
-    printf(" diem trung binh cac mon cu ban la %.2f", (float) tongdiem / tongsomon);
+    printf("ket qua cuoi cung:\n");
+    printf("a=%d",a);
+    printf("b=%d",b);
     return 0;
-
 }
